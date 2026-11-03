@@ -1,0 +1,21 @@
+def f(x):
+  return (x+3)**2
+
+def gradient(x):
+  return 2*(x+3)
+
+learning_rate = 0.1
+x = 2
+for i in range(100):
+  x = x - learning_rate * gradient(x)
+print("MIN X: ", x)
+print("MIN Y: ", f(x))
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-10,4,100)
+y = f(x)
+plt.grid()
+plt.plot(x,y)
